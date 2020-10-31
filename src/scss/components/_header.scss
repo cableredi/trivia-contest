@@ -1,0 +1,13 @@
+header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 50px;
+}
+
+@media (min-width: 600px) {
+  header {
+    padding-top: 100px;
+  }
+}

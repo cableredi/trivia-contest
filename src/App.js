@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
+import { GlobalContext } from "./Context/GlobalContext";
+import Header from "./Components/Header";
+import LandingPage from "./routes/LandingPage";
+import TriviaPage from "./routes/TriviaPage";
+import ResultsPage from "./routes/ResultsPage";
 
-function App() {
+export default function App() {
+  const { setCurrentQuestion, setCurrentScore, setScores } = useContext(
+    GlobalContext
+  );
+
+  useEffect(() => {
+    setCurrentScore();
+    setCurrentQuestion();
+    setScores();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/trivia" component={TriviaPage} />
+        <Route exact path="/results" component={ResultsPage} />
+      </Switch>
+    </main>
   );
 }
-
-export default App;

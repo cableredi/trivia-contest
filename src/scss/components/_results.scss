@@ -1,0 +1,14 @@
+.results {
+  text-align: center;
+  margin-top: 25px;
+
+  & button {
+    margin-top: 25px;
+  }
+
+  &__correct {
+    margin-bottom: 25px;
+    color: $correctColor;
+    font-weight: bold;
+  }
+}

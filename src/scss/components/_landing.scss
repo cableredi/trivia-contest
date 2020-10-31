@@ -1,0 +1,13 @@
+.landing {
+  text-align: center;
+
+  &__header {
+    padding-top: 100px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  &__text {
+    margin: 75px 0;
+  }
+}

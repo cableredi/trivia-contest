@@ -1,0 +1,60 @@
+.trivia {
+  margin: 25px auto;
+  text-align: center;
+
+  &__question {
+    width: 300px;
+    text-align: left;
+    margin: 0 auto;
+    line-height: 1.5em;
+
+    & legend {
+      font-weight: 600;
+      margin-top: 25px;
+    }
+
+    &-options {
+      padding: 5px;
+      margin-bottom: 5px;
+      margin-left: 20px;
+      vertical-align: middle;
+      cursor: pointer;
+
+      & span {
+        margin-right: 10px;
+        font-size: 14px;
+      }
+
+      &:focus {
+        outline: turquoise;
+      }
+    }
+
+    & .correct {
+      border: 2px solid $correctColor;
+      & span {
+        color: $correctColor;
+        font-weight: bold;
+      }
+    }
+    
+    & .incorrect {
+      border: 2px solid $incorrectColor;
+      & span {
+        color: $incorrectColor;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .trivia {
+    padding-top: 50px;
+
+    &__question {
+      width: 400px;
+      margin: 0 auto;
+    }
+  }
+}
