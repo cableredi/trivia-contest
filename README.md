@@ -61,4 +61,7 @@ export const STORE = [
 ];
 ```
 
+## Technologies
+React.js, Node.js, CSS/SCSS
+
 

@@ -1,6 +1,10 @@
 .results {
   text-align: center;
-  margin-top: 25px;
+  margin: 0 auto;
+  background-color: #efefef;
+  width: 300px;
+  padding: 20px 10px;
+
 
   & button {
     margin-top: 25px;
@@ -10,5 +14,8 @@
     margin-bottom: 25px;
     color: $correctColor;
     font-weight: bold;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
   }
 }

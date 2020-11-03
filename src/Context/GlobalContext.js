@@ -1,7 +1,9 @@
 import React, { createContext, useReducer } from "react";
 import { GlobalReducer } from "./GlobalReducer";
+import { STORE } from '../STORE';
 
 const initialState = {
+  questions: {},
   currentQuestion: 0,
   currentScore: 0,
   scores: [],
@@ -11,6 +13,13 @@ export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(GlobalReducer, initialState);
+
+  function setQuestions() {
+    dispatch({
+      type: "SET_QUESTIONS",
+      payload: STORE
+    });
+  }
 
   function setCurrentQuestion() {
     dispatch({
@@ -52,6 +61,8 @@ export const GlobalProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        questions: state.questions,
+        setQuestions,
         currentQuestion: state.currentQuestion,
         setCurrentQuestion,
         updateCurrentQuestion,

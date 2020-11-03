@@ -7,11 +7,12 @@ import TriviaPage from "./routes/TriviaPage";
 import ResultsPage from "./routes/ResultsPage";
 
 export default function App() {
-  const { setCurrentQuestion, setCurrentScore, setScores } = useContext(
+  const { setQuestions, setCurrentQuestion, setCurrentScore, setScores } = useContext(
     GlobalContext
   );
 
   useEffect(() => {
+    setQuestions();
     setCurrentScore();
     setCurrentQuestion();
     setScores();

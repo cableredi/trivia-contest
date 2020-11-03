@@ -1,13 +1,18 @@
 header {
+  font-family: 'Signmar One', cursive;
   text-align: center;
   font-weight: bold;
   font-size: 40px;
   font-weight: bold;
-  padding-top: 50px;
+  padding: 50px 25px;
+  background-color: #efefef;
+  width: 300px;
+  margin: 10px auto;
+  line-height: 2em;
 }
 
 @media (min-width: 600px) {
   header {
-    padding-top: 100px;
+    width: 500px;
   }
 }

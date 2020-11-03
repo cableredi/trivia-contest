@@ -1,5 +1,27 @@
+import shuffle from "../Components/Utils/shuffle";
+
 const GlobalReducer = (state, action) => {
   switch (action.type) {
+    case "SET_QUESTIONS":
+      const questions = [];
+
+      action.payload.map((question) => {
+        let options = question.incorrect;
+        options.push(question.correct);
+
+        shuffle(options);
+
+        questions.push({
+          question: question.question,
+          options: options,
+          correct: question.correct,
+        });
+
+        return questions;
+      });
+
+      return { ...state, questions: questions };
+
     case "SET_CURRENT_QUESTION":
       return { ...state, currentQuestion: 0 };
 
